@@ -4,7 +4,7 @@ pipeline {
   }
 
   environment {
-    AWS_ACCESS_KEY_ID     = credentials('aws_i321d')
+    AWS_ACCESS_KEY_ID     = credentials('aws_id')
     AWS_SECRET_ACCESS_KEY = credentials('aws_secret')
     }
 
@@ -22,14 +22,11 @@ pipeline {
 		stage('Test') {
 			steps {
 				sh 'echo No tests yet'
-        sh 'echo id is $AWS_ACCESS_KEY_ID'
 			}
 		}
 
 		stage('Deploy') {
 			steps {
-        sh 'export'
-
 				deployLambda(
 						[
               useInstanceCredentials: true,
