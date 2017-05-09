@@ -1,0 +1,19 @@
+{
+  "name": "getting-started-jenkins",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deslee/getting-started-jenkins.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deslee/getting-started-jenkins/issues"
+  },
+  "homepage": "https://github.com/deslee/getting-started-jenkins#readme"
+}
