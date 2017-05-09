@@ -22,7 +22,7 @@ pipeline {
 
 		stage('Deploy') {
 			steps {
-      publishLambda([awsAccessKeyId: 'AKIAIRYYRDKI67MKOROA', awsRegion: 'us-east-1', awsSecretKey: '{AQAAABAAAAAwTjOx8CvsXVW2uNpy5drxnQ+c3OsfMtK3yg23FBnXjmXZFOIUAnZ/5Rgt/IsJFmRSRXJekCHJX3DeiPohyU/+dQ==}', functionARN: 'arn:aws:lambda:us-east-1:205556789738:function:gettingStartedJenkins', functionAlias: 'master', useInstanceCredentials: false, versionDescription: ''])
+      deployLambda([alias: '', artifactLocation: './', awsAccessKeyId: 'AKIAIRYYRDKI67MKOROA', awsRegion: 'us-east-1', awsSecretKey: '{AQAAABAAAAAwLV1XgheyJw/LBzo3XTBNwkYyUHnS3wDxLFWIgsUlYAQMfdVx63ve6EE/DfH73HEwSe3alROz5QeNagAGtSDQyw==}', deadLetterQueueArn: '', description: '', environmentConfiguration: [kmsArn: ''], functionName: 'gettingStartedJenkins', handler: 'index.handler', memorySize: '128', role: 'arn:aws:iam::205556789738:role/lambda_basic_execution', runtime: 'nodejs', securityGroups: '', subnets: '', timeout: '10', updateMode: 'full'])
 			}
 		}
   }
