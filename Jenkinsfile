@@ -29,7 +29,7 @@ pipeline {
 			steps {
 				deployLambda(
 						[
-              useInstanceCredentials: false,
+              useInstanceCredentials: true,
   					  awsRegion: 'us-east-1',
   						description: '',
               artifactLocation: './',
