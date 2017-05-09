@@ -11,6 +11,9 @@ pipeline {
         stage('example - echo') {
             steps {
                 sh 'echo hi 2'
+                sh 'mkdir test'
+                sh 'ls'
+                sh 'pwd'
             }
         }
 
