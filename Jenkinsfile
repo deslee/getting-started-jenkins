@@ -31,19 +31,13 @@ pipeline {
 
 				deployLambda(
 						[
-  						alias: '',
-  						artifactLocation: '',
   					  awsRegion: 'us-east-1',
-  						deadLetterQueueArn: '',
   						description: '',
-  						environmentConfiguration: [kmsArn: ''],
   						functionName: 'gettingStartedJenkins',
   						handler: 'index.handler',
   						memorySize: '128',
   						role: 'ARN arn:aws:iam::205556789738:role/lambda_basic_execution',
   						runtime: 'nodejs',
-  						securityGroups: '',
-  						subnets: '',
   						timeout: '10',
   						updateMode: 'full',
   						useInstanceCredentials: true
