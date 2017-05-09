@@ -1,26 +1,54 @@
 pipeline {
-    agent {
-	label "master"
+  agent {
+    label "master"
+  }
+
+  environment {
+    AWS_ACCESS_KEY_ID     = credentials('aws_id')
+    AWS_SECRET_ACCESS_KEY = credentials('aws_secret')
     }
 
-    tools {
-        nodejs 'Node 6.10.3'
-    }
+  tools {
+    nodejs 'Node 6.10.3'
+  }
 
-    stages {
-        stage('example - echo') {
-            steps {
-                sh 'echo hi 2'
-                sh 'mkdir test'
-                sh 'ls'
-                sh 'pwd'
-            }
-        }
+	stages {
+		stage('Build') {
+			steps {
+				sh 'npm install'
+			}
+		}
 
-        stage('example - npm') {
-            steps {
-                sh 'npm --version'
-            }
-        }
-    }
+		stage('Test') {
+			steps {
+				sh 'echo No tests yet'
+			}
+		}
+
+		stage('Deploy') {
+			steps {
+				deployLambda(
+						[
+  						alias: '',
+  						artifactLocation: '',
+  					  awsRegion: 'us-east-1',
+  						deadLetterQueueArn: '',
+  						description: '',
+  						environmentConfiguration: [kmsArn: ''],
+  						functionName: 'gettingStartedJenkins',
+  						handler: 'index.handler',
+  						memorySize: '128',
+  						role: 'ARN arn:aws:iam::205556789738:role/lambda_basic_execution',
+  						runtime: 'nodejs',
+  						securityGroups: '',
+  						subnets: '',
+  						timeout: '10',
+  						updateMode: 'full',
+  						useInstanceCredentials: true
+						]
+				)
+			}
+		}
+  }
+
 }
