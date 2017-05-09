@@ -3,11 +3,6 @@ pipeline {
     label "master"
   }
 
-  environment {
-    AWS_ACCESS_KEY_ID = credentials('aws_id')
-    AWS_SECRET_ACCESS_KEY = credentials('aws_secret')
-  }
-
   tools {
     nodejs 'Node 6.10.3'
   }
