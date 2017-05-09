@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('example - echo') {
             steps {
-                sh 'echo hi'
+                sh 'echo hi 2'
             }
         }
 
