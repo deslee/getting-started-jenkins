@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker 'node:6.3' }
+    agent { label 'main' }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                sh 'echo hi'
             }
         }
     }
