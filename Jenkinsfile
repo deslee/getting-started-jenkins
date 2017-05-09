@@ -34,6 +34,7 @@ pipeline {
               useInstanceCredentials: true,
   					  awsRegion: 'us-east-1',
   						description: '',
+              artifactLocation: './',
   						functionName: 'gettingStartedJenkins',
   						handler: 'index.handler',
   						memorySize: '128',
