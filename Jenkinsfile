@@ -4,7 +4,7 @@ pipeline {
   }
 
   environment {
-    AWS_ACCESS_KEY_ID     = credentials('aws_id')
+    AWS_ACCESS_KEY_ID = credentials('aws_id')
     AWS_SECRET_ACCESS_KEY = credentials('aws_secret')
   }
 
@@ -29,7 +29,7 @@ pipeline {
 			steps {
 				deployLambda(
 						[
-              useInstanceCredentials: true,
+              useInstanceCredentials: false,
   					  awsRegion: 'us-east-1',
   						description: '',
               artifactLocation: './',
@@ -39,8 +39,7 @@ pipeline {
   						role: 'ARN arn:aws:iam::205556789738:role/lambda_basic_execution',
   						runtime: 'nodejs',
   						timeout: '10',
-  						updateMode: 'full',
-  						useInstanceCredentials: true
+  						updateMode: 'full'
 						]
 				)
 			}
