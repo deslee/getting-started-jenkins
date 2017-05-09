@@ -31,6 +31,7 @@ pipeline {
 
 				deployLambda(
 						[
+              useInstanceCredentials: true,
   					  awsRegion: 'us-east-1',
   						description: '',
   						functionName: 'gettingStartedJenkins',
