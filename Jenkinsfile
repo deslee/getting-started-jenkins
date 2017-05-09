@@ -27,21 +27,7 @@ pipeline {
 
 		stage('Deploy') {
 			steps {
-				deployLambda(
-						[
-              useInstanceCredentials: true,
-  					  awsRegion: 'us-east-1',
-  						description: '',
-              artifactLocation: './',
-  						functionName: 'gettingStartedJenkins',
-  						handler: 'index.handler',
-  						memorySize: '128',
-  						role: 'ARN arn:aws:iam::205556789738:role/lambda_basic_execution',
-  						runtime: 'nodejs',
-  						timeout: '10',
-  						updateMode: 'full'
-						]
-				)
+      publishLambda([awsRegion: 'us-east-1', functionARN: 'arn:aws:lambda:us-east-1:205556789738:function:gettingStartedJenkins', functionAlias: 'gettingStartedJenkins', useInstanceCredentials: true, versionDescription: ''])
 			}
 		}
   }
