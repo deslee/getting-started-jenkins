@@ -25,7 +25,7 @@ exports.handler = (event, context, callback) => {
 
     switch (event.httpMethod) {
         case 'DELETE':
-            done(new Error(`Unsupported method "${event.httpMethod}"`));
+            done(new Error(`Unsupported method3213123 "${event.httpMethod}"`));
             break;
         case 'GET':
             done(new Error(`Unsupported method!!!!!1 "${event.httpMethod}"`));
