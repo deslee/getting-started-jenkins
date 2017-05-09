@@ -22,6 +22,7 @@ pipeline {
 		stage('Test') {
 			steps {
 				sh 'echo No tests yet'
+        sh 'echo id is $AWS_ACCESS_KEY_ID'
 			}
 		}
 
