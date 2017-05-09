@@ -22,7 +22,7 @@ pipeline {
 
 		stage('Deploy') {
 			steps {
-      publishLambda([awsAccessKeyId: 'AKIAIRYYRDKI67MKOROA', awsRegion: 'us-east-1', awsSecretKey: '{AQAAABAAAAAwTjOx8CvsXVW2uNpy5drxnQ+c3OsfMtK3yg23FBnXjmXZFOIUAnZ/5Rgt/IsJFmRSRXJekCHJX3DeiPohyU/+dQ==}', functionARN: 'arn:aws:lambda:us-east-1:205556789738:function:gettingStartedJenkins', functionAlias: 'gettingStartedJenkins', useInstanceCredentials: false, versionDescription: ''])
+      publishLambda([awsAccessKeyId: 'AKIAIRYYRDKI67MKOROA', awsRegion: 'us-east-1', awsSecretKey: '{AQAAABAAAAAwTjOx8CvsXVW2uNpy5drxnQ+c3OsfMtK3yg23FBnXjmXZFOIUAnZ/5Rgt/IsJFmRSRXJekCHJX3DeiPohyU/+dQ==}', functionARN: 'arn:aws:lambda:us-east-1:205556789738:function:gettingStartedJenkins', functionAlias: 'master', useInstanceCredentials: false, versionDescription: ''])
 			}
 		}
   }
