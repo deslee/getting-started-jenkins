@@ -27,6 +27,8 @@ pipeline {
 
 		stage('Deploy') {
 			steps {
+        sh 'export'
+
 				deployLambda(
 						[
   						alias: '',
